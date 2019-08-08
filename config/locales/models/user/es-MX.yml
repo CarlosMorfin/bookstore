@@ -1,0 +1,9 @@
+es-MX:
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      full_name: Nombre completo
+      email: Correo
