@@ -1,7 +1,7 @@
 User.create(
-  username:              'Administrator',
-  password:              'bookstores',
-  password_confirmation: 'bookstores',
+  username:              'admin',
+  password:              'administrador',
+  password_confirmation: 'administrador',
   roles:                 [Role.find_by(code: :franchisor)]
 )
 

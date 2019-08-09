@@ -17,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 # Flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.4'
-
+# Authorization library for Ruby on Rails
+gem 'cancancan', '~> 3.0', '>= 3.0.1'
 gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
@@ -44,6 +45,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'selenium-webdriver'
+
   # Testing framework for Rails
  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   # Fixtures replacement with a straightforward definition syntax
@@ -58,11 +62,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'webdrivers', '~> 4.1', '>= 4.1.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
