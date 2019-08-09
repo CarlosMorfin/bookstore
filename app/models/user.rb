@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :timeoutable
 
+  has_and_belongs_to_many :roles
+
   validates :username,
     uniqueness: true,
     presence:   true,
