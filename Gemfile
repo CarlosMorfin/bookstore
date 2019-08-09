@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # Flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.4'
 
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Use CoffeeScript for .coffee assets and views
