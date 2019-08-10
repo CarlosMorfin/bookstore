@@ -19,7 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise', '~> 4.4'
 # Authorization library for Ruby on Rails
 gem 'cancancan', '~> 3.0', '>= 3.0.1'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.3.1'
+gem "font-awesome-rails"
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Use CoffeeScript for .coffee assets and views
