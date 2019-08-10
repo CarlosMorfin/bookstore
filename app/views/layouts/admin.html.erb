@@ -1,5 +1,24 @@
 <% content_for :main_navbar do %>
+<div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+  </div>
 <% end %>
+
 <% content_for :application do %>
+  <div id="admin-wrapper">
+    <div class="container-fluid">
+      <h1 class="page-header mb-3">
+        <%= yield(:title) %>
+      </h1>
+      <div id="alerts">
+        <%= render 'layouts/alerts', alerts: flash %>
+      </div>
+      <%= yield %>
+    </div>
+  </div>
 <% end %>
+
+<%= render template: 'layouts/application' %>
+
 

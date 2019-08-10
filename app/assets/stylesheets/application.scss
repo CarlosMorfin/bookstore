@@ -17,3 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-main {
+  background-color: #56251B !important;
+}
+
+.navbar-main .navbar-nav .navbar-text {
+  color: #fff;
+}
