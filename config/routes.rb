@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     root 'public/users/sessions#new'
   end
 
+  scope module: 'public' do
+  end
+
   namespace :admin do
+    root to: 'root#show'
+    resources :stores
   end
 
 end

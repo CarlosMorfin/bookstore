@@ -42,9 +42,8 @@ class Ability
   end
 
   def franchisor
-    p '--------------------------------------'
     can :show,   :admin_root
-    can :manage, :admin_branches
+    can :manage, :admin_stores
   end
 
 end
