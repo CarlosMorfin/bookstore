@@ -18,10 +18,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-main">
-     <%= yield(:main_navbar) if content_for?(:main_navbar) %>
-   </nav>
+    <div id="wrapper">
+      <!-- Navigation -->
 
-   <%= yield(:application) %>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <%= yield(:main_navbar) if content_for?(:main_navbar) %>
+      </nav>
+
+      <%= yield(:application) %>
+    </div>
   </body>
 </html>

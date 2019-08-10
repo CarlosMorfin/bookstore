@@ -1,0 +1,6 @@
+es-MX:
+  layouts:
+    admin:
+      stores: Librerias
+      books: Libros
+      sign_out: Salir
