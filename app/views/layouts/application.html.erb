@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookstore</title>
+    <title>
+      <%= yield(:title) %>
+    </title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +18,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light navbar-main">
-     <%= yield(:main_navbar) if content_for?(:main_navbar) %>
-   </nav>
+    <div id="wrapper">
+      <!-- Navigation -->
 
-   <%= yield(:application) %>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-main">
+        <%= yield(:main_navbar) if content_for?(:main_navbar) %>
+      </nav>
+
+      <%= yield(:application) %>
+    </div>
   </body>
 </html>
