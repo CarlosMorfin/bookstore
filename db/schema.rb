@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_055052) do
     t.string "codename", limit: 32, null: false
     t.string "address", limit: 132, null: false
     t.string "phone", limit: 64
+    t.index ["codename"], name: "index_store_on_codename", unique: true
   end
 
   create_table "user", force: :cascade do |t|

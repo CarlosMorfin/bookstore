@@ -4,6 +4,10 @@ class CreateStore < ActiveRecord::Migration[5.2]
       t.string "codename", limit: 32,  null: false
       t.string "address",  limit: 132, null: false
       t.string "phone",    limit: 64
+
+      t.timestamp
     end
+
+    add_index :store, :codename, unique: true
   end
 end
