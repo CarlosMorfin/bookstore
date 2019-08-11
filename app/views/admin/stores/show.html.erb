@@ -1,0 +1,21 @@
+<% content_for :title, t('.title', code_name: @store.codename) %>
+
+<div class="details-group">
+  <%= hp_field_label(:store, :codename) %>
+  <%= hp_field_content(@store.codename) %>
+</div>
+
+<div class="details-group">
+  <%= hp_field_label(:store, :phone) %>
+  <%= hp_field_content(@store.phone) %>
+</div>
+
+<div class="details-group">
+  <%= hp_field_label(:store, :address) %>
+  <%= hp_field_content(@store.address) %>
+</div>
+
+<% if can?(:edit, :admin_stores) %>
+  <hr>
+  <%= link_to(t('.edit'), { action: :edit }, class: 'btn btn-light') %>
+<% end %>

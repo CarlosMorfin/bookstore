@@ -1,1 +1,51 @@
+<% content_for :title, t('.title') %>
+
+<% if can?(:new, :admin_stores) %>
+  <div class="mb-1 text-right">
+    <%= link_to(t('.new'), { action: :new }, class: 'btn btn-light') %>
+  </div>
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <% if can?(:show, :admin_stores) %>
+        <th>
+          <%= hp_human_name_for(:store, :codename) %>
+        </th>
+      <% end %>
+      <th>
+        <%= hp_human_name_for(:store, :phone) %>
+      </th>
+      <th>
+        <%= hp_human_name_for(:store, :address) %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stores.each_with_index do |store, index| %>
+      <tr>
+        <td>
+          <%= index + 1 %>
+        </td>
+        <td>
+          <%= link_to_if(
+              can?(:show, :admin_stores),
+              store.codename,
+              action: :show, id: store) %>
+        </td>
+        <td>
+          <%= store.phone %>
+        </td>
+        <td>
+          <%= store.address %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 

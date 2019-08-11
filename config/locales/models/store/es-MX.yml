@@ -1,0 +1,11 @@
+es-MX:
+  activerecord:
+    models:
+      store:
+        one: Librería
+        other: Librerias
+    attributes:
+      store:
+        codename: Nombre
+        phone: Teléfono
+        address: Dirección

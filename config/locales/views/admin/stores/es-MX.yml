@@ -1,0 +1,13 @@
+es-MX:
+  admin:
+    stores:
+      index:
+        title: Librerías
+        new: Nueva
+      new:
+        title: Nueva librería
+      show:
+        title: ! '%{code_name}'
+        edit: Editar
+      edit:
+        title: ! '%{code_name}'
