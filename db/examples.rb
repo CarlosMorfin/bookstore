@@ -7,3 +7,4 @@
 
 load File.expand_path('../examples/users.rb', __FILE__)
 load File.expand_path('../examples/stores.rb', __FILE__)
+load File.expand_path('../examples/books.rb', __FILE__)

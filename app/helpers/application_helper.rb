@@ -39,4 +39,17 @@ module ApplicationHelper
     end
   end
 
+  def hp_delete_button(url, options = {})
+    scope     = 'helpers.delete_button'
+    css_class = "btn btn-danger #{options[:class]}"
+    confirm   = options[:confirm] || t('confirmation', scope: scope)
+
+    form_tag url, method: :delete, class: options[:class] do
+      submit_tag(t('title', scope: scope),
+        data:   { confirm: confirm },
+        class:  css_class
+      )
+    end
+  end
+
 end

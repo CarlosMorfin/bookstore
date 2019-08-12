@@ -1,0 +1,49 @@
+<% content_for :title, t('.title') %>
+
+<% if can?(:new, :admin_books) %>
+  <div class="mb-1 text-right">
+    <%= link_to(t('.new'), { action: :new }, class: 'btn btn-light') %>
+  </div>
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <% if can?(:show, :admin_books) %>
+        <th>
+          <%= hp_human_name_for(:book, :title) %>
+        </th>
+      <% end %>
+      <th>
+        <%= hp_human_name_for(:book, :author) %>
+      </th>
+      <th>
+        <%= hp_human_name_for(:book, :year) %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each_with_index do |book, index| %>
+      <tr>
+        <td>
+          <%= index + 1 %>
+        </td>
+        <td>
+          <%= link_to_if(
+              can?(:show, :admin_books),
+              book.title,
+              action: :show, id: book) %>
+        </td>
+        <td>
+          <%= book.author %>
+        </td>
+        <td>
+          <%= book.year %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

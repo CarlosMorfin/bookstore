@@ -1,0 +1,22 @@
+es-MX:
+  admin:
+    books:
+      index:
+        title: Libros
+        new: Nuevo
+      new:
+        title: Nuevo libro
+      create:
+        success: El libro ha sido agregado exitosamente
+        error: No se pudo agregar el libro
+      show:
+        title: ! '%{title}'
+        edit: Editar
+      edit:
+        title: ! '%{title}'
+      update:
+        success: El libro ha sido actualizado exitosamente
+        error: No se pudo actualizar el libro
+      destroy:
+        success: El libro fue borrado exitosamente
+        error: No se pudo borrar el libro

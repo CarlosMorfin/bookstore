@@ -1,0 +1,11 @@
+es-MX:
+  activerecord:
+    models:
+      book:
+        one: Libro
+        other: Libros
+    attributes:
+      book:
+        title: Nombre
+        author: Autor
+        year: Año de publicación

@@ -44,6 +44,7 @@ class Ability
   def franchisor
     can :show,   :admin_root
     can :manage, :admin_stores
+    can :manage, :admin_books
   end
 
 end

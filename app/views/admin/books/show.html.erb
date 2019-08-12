@@ -1,0 +1,26 @@
+<% content_for :title, t('.title', title: @book.title) %>
+
+<div class="details-group">
+  <%= hp_field_label(:book, :title) %>
+  <%= hp_field_content(@book.title) %>
+</div>
+
+<div class="details-group">
+  <%= hp_field_label(:book, :author) %>
+  <%= hp_field_content(@book.author) %>
+</div>
+
+<div class="details-group">
+  <%= hp_field_label(:book, :year) %>
+  <%= hp_field_content(@book.year) %>
+</div>
+
+
+<% if can?(:edit, :admin_books) %>
+  <hr>
+  <%= link_to(t('.edit'), { action: :edit }, class: 'btn btn-light') %>
+<% end %>
+
+<% if can?(:destroy, :admin_books) %>
+  <%= hp_delete_button(admin_book_path(@book), class: 'd-inline') %>
+<% end %>

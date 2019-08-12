@@ -13,6 +13,11 @@
           <%= link_to(t('.stores'), admin_stores_path, class: 'nav-link') %>
         </li>
       <% end %>
+      <% if can?(:index, :admin_books) %>
+        <li class="nav-item <%= 'active' if active_main_navbar == :books %>">
+          <%= link_to(t('.books'), admin_books_path, class: 'nav-link') %>
+        </li>
+      <% end %>
     </ul>
 
     <ul class="navbar-nav ml-auto">

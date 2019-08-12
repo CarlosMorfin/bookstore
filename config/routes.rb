@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'root#show'
     resources :stores
+    resources :books
   end
 
 end
