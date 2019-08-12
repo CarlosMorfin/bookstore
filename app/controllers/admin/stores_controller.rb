@@ -3,7 +3,7 @@ module Admin
   class StoresController < AdminController
 
     before_action :find_store,
-      only: [:show, :edit, :update]
+      only: [:show, :edit, :update, :destroy]
 
     def index
       @stores = Store.order(:codename)
@@ -31,10 +31,20 @@ module Admin
 
     def update
       if @store.update(store_params)
-        flash[:norice] = t('.success')
+        flash[:notice] = t('.success')
         redirect_to action: :show
       else
         flash[:alert] = t('.error')
+        render :edit
+      end
+    end
+
+    def destroy
+      if @store.destroy
+        flash[:notice] = t('.success')
+        redirect_to action: :index
+      else
+        flash.now[:alert] = t('.error')
         render :edit
       end
     end

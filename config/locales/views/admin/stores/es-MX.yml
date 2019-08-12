@@ -6,8 +6,17 @@ es-MX:
         new: Nueva
       new:
         title: Nueva librería
+      create:
+        success: La librería ha sido creada exitosamente
+        error: No se pudo crear la librería
       show:
         title: ! '%{code_name}'
         edit: Editar
       edit:
         title: ! '%{code_name}'
+      update:
+        success: La librería ha sido actualizada exitosamente
+        error: No se pudo actualizar la librería
+      destroy:
+        success: La librería fue borrada exitosamente
+        error: No se pudo borrar la librería

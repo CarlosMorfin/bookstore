@@ -19,3 +19,7 @@
   <hr>
   <%= link_to(t('.edit'), { action: :edit }, class: 'btn btn-light') %>
 <% end %>
+
+<% if can?(:destroy, :admin_stores) %>
+  <%= hp_delete_button(admin_store_path(@store), class: 'd-inline') %>
+<% end %>
