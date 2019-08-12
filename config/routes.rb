@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'root#show'
-    resources :stores
+    resources :stores do
+      resources :books,
+        controller: 'stores/books',
+        only: [:index]
+        member do
+          patch 'add_books'
+        end
+    end
+
     resources :books
   end
 

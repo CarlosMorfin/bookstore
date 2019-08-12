@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_08_12_014530) do
   create_table "book_store", id: false, force: :cascade do |t|
     t.bigint "store_id", null: false
     t.bigint "book_id", null: false
-    t.integer "book_count", null: false
+    t.integer "book_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_book_store_on_book_id"
@@ -61,4 +61,5 @@ ActiveRecord::Schema.define(version: 2019_08_12_014530) do
     t.index ["username"], name: "index_user_on_username", unique: true
   end
 
+  add_foreign_key "book_store", "store", on_delete: :cascade
 end

@@ -15,3 +15,5 @@ Store.create(
   address:  'Prolongación Corregidora Norte #350',
   phone:    '4423454596',
 )
+
+

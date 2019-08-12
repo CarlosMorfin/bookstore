@@ -15,8 +15,15 @@
   <%= hp_field_content(@store.address) %>
 </div>
 
+<hr>
+<% if can?(:index, :admin_stores_books) %>
+  <%= link_to admin_store_books_path(@store),
+    class: "btn btn-light" do %>
+    <%= t('.libros') %>
+  <% end %>
+<% end %>
+
 <% if can?(:edit, :admin_stores) %>
-  <hr>
   <%= link_to(t('.edit'), { action: :edit }, class: 'btn btn-light') %>
 <% end %>
 

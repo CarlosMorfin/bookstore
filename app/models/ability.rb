@@ -45,6 +45,7 @@ class Ability
     can :show,   :admin_root
     can :manage, :admin_stores
     can :manage, :admin_books
+    can :manage, :admin_stores_books
   end
 
 end

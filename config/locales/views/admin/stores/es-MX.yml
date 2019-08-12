@@ -11,6 +11,7 @@ es-MX:
         error: No se pudo crear la librería
       show:
         title: ! '%{code_name}'
+        libros: Ver libros
         edit: Editar
       edit:
         title: ! '%{code_name}'

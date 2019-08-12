@@ -1,5 +1,10 @@
 class Store < ApplicationRecord
 
+  has_many :store_books,
+    class_name: :BookStore
+
+  has_many :books, through: :store_books
+
   validates :codename,
     presence:   true,
     uniqueness: true,
