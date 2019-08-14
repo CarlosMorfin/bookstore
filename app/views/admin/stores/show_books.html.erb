@@ -1,0 +1,53 @@
+<% content_for :title, t('.title') %>
+
+<% if can?(:add_book, :admin_stores_books) %>
+  <div class="mb-1 text-right"
+    <%= form_for(add_book_admin_store_path(@store), :html => { class: 'btn text-right' }) do |f| %>
+      <%= render 'modal_add_books' %>
+    <% end %>
+  </div>
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+        <%= hp_human_name_for(:book, :title) %>
+      </th>
+      <th>
+        <%= hp_human_name_for(:book, :author) %>
+      </th>
+      <th>
+        <%= hp_human_name_for(:book, :year) %>
+      </th>
+      <th>
+        <%= hp_human_name_for(:stored_book, :book_count) %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stored_books.each_with_index do |stored_book, index| %>
+      <tr>
+        <% p @stored_books.count %>
+        <td>
+          <%= index + 1 %>
+        </td>
+        <td>
+          <%= stored_book.book.title %>
+        </td>
+        <td>
+          <%= stored_book.book.author %>
+        </td>
+        <td>
+          <%= stored_book.book.year %>
+        </td>
+        <td>
+          <%= stored_book.book_count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

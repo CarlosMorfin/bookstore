@@ -1,28 +1,43 @@
 <% content_for :title, t('.title', code_name: @store.codename) %>
 
-<div class="details-group">
-  <%= hp_field_label(:store, :codename) %>
-  <%= hp_field_content(@store.codename) %>
-</div>
-
-<div class="details-group">
-  <%= hp_field_label(:store, :phone) %>
-  <%= hp_field_content(@store.phone) %>
-</div>
-
-<div class="details-group">
-  <%= hp_field_label(:store, :address) %>
-  <%= hp_field_content(@store.address) %>
-</div>
-
-<hr>
 <% if can?(:index, :admin_stores_books) %>
-  <%= link_to admin_store_books_path(@store),
-    class: "btn btn-light" do %>
-    <%= t('.libros') %>
-  <% end %>
+  <div class="mb-1 text-right">
+    <%= link_to show_books_admin_store_path(@store),
+      class: "btn btn-light text-right" do %>
+      <%= t('.libros') %>
+    <% end %>
+  </div>
 <% end %>
 
+<hr>
+<table class='table table-borderless'>
+  <tr>
+    <th>
+      <%= hp_human_name_for(:store, :codename) %>
+    </th>
+    <td>
+      <%= hp_field_content(@store.codename) %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= hp_human_name_for(:store, :phone) %>
+    </th>
+    <td>
+      <%= hp_field_content(@store.phone) %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= hp_human_name_for(:store, :address) %>
+    </th>
+    <td>
+      <%= hp_field_content(@store.address) %>
+    </td>
+  </tr>
+</table>
+
+<hr>
 <% if can?(:edit, :admin_stores) %>
   <%= link_to(t('.edit'), { action: :edit }, class: 'btn btn-light') %>
 <% end %>
