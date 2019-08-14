@@ -1,0 +1,6 @@
+es-MX:
+  activerecord:
+    models:
+    attributes:
+      stored_book:
+        book_count: Cantidad

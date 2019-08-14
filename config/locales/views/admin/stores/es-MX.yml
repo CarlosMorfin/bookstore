@@ -13,6 +13,13 @@ es-MX:
         title: ! '%{code_name}'
         libros: Ver libros
         edit: Editar
+      show_books:
+        title: Libros en librería
+      modal_add_books:
+        close: Cerrar
+        add_book: Agregar libro
+        add: Agregar
+        select_book: Seleccionar libro
       edit:
         title: ! '%{code_name}'
       update:

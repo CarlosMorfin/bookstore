@@ -1,9 +1,8 @@
 class Store < ApplicationRecord
 
-  has_many :store_books,
-    class_name: :BookStore
+  has_many :stored_books
 
-  has_many :books, through: :store_books
+  has_many :books, through: :stored_books
 
   validates :codename,
     presence:   true,
