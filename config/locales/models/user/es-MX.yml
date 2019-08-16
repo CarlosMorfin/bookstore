@@ -5,6 +5,7 @@ es-MX:
         one: Usuario
         other: Usuarios
     attributes:
-      username: Usuario
-      password: Contraseña
-      password_confirmation: Confirmación de contraseña
+      user:
+        username: Usuario
+        password: Contraseña
+        password_confirmation: Confirmación de contraseña

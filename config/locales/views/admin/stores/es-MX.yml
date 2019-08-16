@@ -28,3 +28,6 @@ es-MX:
       destroy:
         success: La librería fue borrada exitosamente
         error: No se pudo borrar la librería
+      add_book:
+        success: El libro se agregó exitosamente
+        error: No se pudo agregar el libro

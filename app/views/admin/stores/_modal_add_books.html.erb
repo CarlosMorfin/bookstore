@@ -16,14 +16,26 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <%= select_tag(
-            'book_id',
-            options_from_collection_for_select(@books, :id, :title),
-            include_blank: true,
-            class: 'selectpicker form-control',
-            data:  { 'live-search': true } ) %>
-        <%= number_field_tag('book_count', nil, min: 1, class: 'form-control') %>
+      <div class="modal-body d-flex justify-content-center">
+        <div class="col-3">
+          <%= hp_human_name_for(Book) %>
+        </div>
+        <div class="col-9">
+          <%= select_tag(
+              'book_id',
+              options_from_collection_for_select(@books, :id, :title),
+              include_blank: true,
+              class: 'selectpicker form-control',
+              data:  { 'live-search': true } ) %>
+        </div>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+        <div class="col-3">
+          <%= hp_human_name_for(:stored_book, :book_count) %>
+        </div>
+        <div class="col-9">
+          <%= number_field_tag('book_count', nil, min: 1, class: 'form-control') %>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('.close') %></button>
