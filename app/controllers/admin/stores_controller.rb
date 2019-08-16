@@ -56,10 +56,10 @@ module Admin
     end
 
     def add_book
-      stored_book = StoredBook.new(book_params)
+      new_stored_book = StoredBook.new(book_params)
 
-      if stored_book.valid?
-        add_book_to_store(stored_book)
+      if new_stored_book.valid?
+        add_book_to_store(new_stored_book)
 
         flash[:notice] = t('.success')
       else
@@ -95,12 +95,16 @@ module Admin
       @store = Store.find(params[:id])
     end
 
-    def add_book_to_store(stored_book)
-      if @store.books.include?(stored_book.book)
-        stored_books = @store.stored_books.find_by(book_id: stored_book.book_id)
-        stored_books.update(book_count: (stored_books.book_count + stored_book.book_count))
+    def add_book_to_store(new_stored_book)
+      if @store.books.include?(new_stored_book.book)
+        stored_book = @store
+          .stored_books
+          .find_by(book_id: new_stored_book.book_id)
+        stored_book.update(
+          book_count: (stored_book.book_count + new_stored_book.book_count)
+        )
       else
-        @store.stored_books << stored_book
+        @store.stored_books << new_stored_book
       end
     end
 
